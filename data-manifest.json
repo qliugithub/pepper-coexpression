@@ -1,0 +1,19 @@
+{
+  "queryableGenes": 28387,
+  "inputGenes": 39067,
+  "samples": 66,
+  "tissues": 22,
+  "precision": "Raw TPM Float64; normalized vectors Float64; final PCC rounded to Float32, as in local matrices.",
+  "files": [
+    {
+      "file": "data/expression.f64.gz",
+      "bytes": 11121125,
+      "sha256": "11f2c25bab1dece857bd379b735ebd24c1ef1754f808d71fe8ad15b9ce8fb6eb"
+    },
+    {
+      "file": "data/metadata.json.gz",
+      "bytes": 2901542,
+      "sha256": "0ae247f15a6a6982f4f150021d44fa5b26e696003b2bdb40df410e0f734eea3a"
+    }
+  ]
+}
