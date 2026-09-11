@@ -3,6 +3,16 @@ const dictionary={
  '在线版首次加载完整表达与注释数据；PCC 在浏览器后台计算，无需本地服务器。原始基因名与人工注释保持原文。':'The first visit loads full expression and annotation data. PCC is calculated in a background worker; no local server is needed. Original gene names and curated annotations are preserved.',
  '正在加载在线数据…':'Loading online data…',
  '正在初始化查询引擎…':'Initializing the query engine…',
+'TF 分类依据项目 TF 家族表的精确 ID 匹配；未标注不代表已确认不是 TF。':'TF classification uses exact IDs in the project TF-family table; missing annotation does not establish that a gene is not a TF.',
+"伙伴类型":"Partner type",
+"全部基因":"All genes",
+"仅转录因子（TF）":"Transcription factors only (TF)",
+"TF 分类 / 家族":"TF status / family",
+"未标注为 TF":"Not annotated as TF",
+"无效的基因类型":"Invalid gene type",
+"当前查询：仅转录因子伙伴":"Active query: TF partners only",
+"当前查询：全部基因伙伴":"Active query: all gene partners",
+"◆ 转录因子（TF）　● 未标注为 TF；颜色表示网络层级。TF 筛选作用于伙伴表、网络各层及下载，目标基因始终保留。":"\u25c6 Transcription factor (TF) \u00b7 \u25cf Not annotated as TF; colors indicate network levels. TF filtering applies to partners, all network layers and downloads; the target is always retained.",
 'Viridis · 紫–绿–黄':'Viridis · Purple–green–yellow',
 "配色":"Palette",
 "默认配色":"Default palette",
@@ -64,6 +74,8 @@ export function translate(value){
  if(Object.hasOwn(dictionary,trimmed))return value.replace(trimmed,dictionary[trimmed]);
  let s=value;
  const patterns=[
+ [/^当前网络：(\d+) 个 TF \/ (\d+) 个节点（含目标）$/,'Current network: $1 TFs / $2 nodes (including target)'],
+ [/未标注为 TF/g,'Not annotated as TF'],
  [/^(\S+) 须为 (.+) 的整数$/,'$1 must be an integer in $2'],
  [/^(.*) · 第 (\d+) 行$/,'$1 · row $2'],
  [/^([A-Z]+)列$/,'Column $1'],
